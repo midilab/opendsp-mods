@@ -1,0 +1,1105 @@
+@prefix atom: <http://lv2plug.in/ns/ext/atom#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix ingen: <http://drobilla.net/ns/ingen#> .
+@prefix lv2: <http://lv2plug.in/ns/lv2core#> .
+@prefix midi: <http://lv2plug.in/ns/ext/midi#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix patch: <http://lv2plug.in/ns/ext/patch#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<TalDub3>
+	ingen:canvasX 530.0 ;
+	ingen:canvasY 198.0 ;
+	<http://lv2plug.in/ns/ext/state#state> <TalDub3/state.ttl> ;
+	lv2:port <TalDub3/cutoff> ,
+		<TalDub3/delaytime> ,
+		<TalDub3/delaytimesync> ,
+		<TalDub3/delaytwice_l> ,
+		<TalDub3/delaytwice_r> ,
+		<TalDub3/dry> ,
+		<TalDub3/feedback> ,
+		<TalDub3/highcut> ,
+		<TalDub3/inputdrive> ,
+		<TalDub3/livemode> ,
+		<TalDub3/lv2_audio_in_1> ,
+		<TalDub3/lv2_audio_in_2> ,
+		<TalDub3/lv2_audio_out_1> ,
+		<TalDub3/lv2_audio_out_2> ,
+		<TalDub3/lv2_events_in> ,
+		<TalDub3/lv2_freewheel> ,
+		<TalDub3/lv2_port_14> ,
+		<TalDub3/resonance> ,
+		<TalDub3/unused> ,
+		<TalDub3/wet> ;
+	lv2:prototype <urn:juce:TalDub3> ;
+	a ingen:Block .
+
+<TalDub3/cutoff>
+	ingen:value 0.54799998 ;
+	lv2:index 13 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/delaytime>
+	ingen:value 0.07086615 ;
+	midi:binding [
+		ingen:head <file:///home/opendsp/data/mod/midilab-mixxx-dub/efx-rack/dub2.ingen/audio_out_3> ,
+			<TalDub3/lv2_audio_in_1> ,
+			<TalDub3/lv2_audio_in_2> ,
+			<audio_out_1> ;
+		ingen:tail <file:///home/opendsp/data/mod/midilab-mixxx-dub/efx-rack/dub2.ingen/TalDub3/lv2_audio_out_1> ,
+			<audio_in_3> ,
+			<audio_in_4> ,
+			<impulse_reverb_stereo/out_l> ;
+		midi:controllerNumber 30 ;
+		a midi:Controller
+	] ;
+	lv2:index 7 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/delaytimesync>
+	ingen:value 0.0 ;
+	lv2:index 8 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/delaytwice_l>
+	ingen:value 1.0 ;
+	lv2:index 9 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/delaytwice_r>
+	ingen:value 1.0 ;
+	lv2:index 10 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/dry>
+	ingen:value 0.03111588 ;
+	lv2:index 15 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/feedback>
+	ingen:value 0.0 ;
+	midi:binding [
+		ingen:head <file:///home/opendsp/data/mod/midilab-mixxx-dub/efx-rack/dub2.ingen/audio_out_1> ,
+			<TalDub3/lv2_audio_in_1> ,
+			<TalDub3/lv2_audio_in_2> ;
+		ingen:tail <file:///home/opendsp/data/mod/midilab-mixxx-dub/efx-rack/dub2.ingen/MVerb/lv2_audio_out_1> ,
+			<audio_in_3> ,
+			<audio_in_4> ;
+		midi:controllerNumber 31 ;
+		a midi:Controller
+	] ;
+	lv2:index 11 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/highcut>
+	ingen:value 0.252 ;
+	lv2:index 12 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/inputdrive>
+	ingen:value 0.40799999 ;
+	lv2:index 6 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/livemode>
+	ingen:value 0.72942412 ;
+	lv2:index 18 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/lv2_audio_in_1>
+	lv2:index 2 ;
+	a lv2:AudioPort ,
+		lv2:InputPort .
+
+<TalDub3/lv2_audio_in_2>
+	lv2:index 3 ;
+	a lv2:AudioPort ,
+		lv2:InputPort .
+
+<TalDub3/lv2_audio_out_1>
+	lv2:index 4 ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<TalDub3/lv2_audio_out_2>
+	lv2:index 5 ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<TalDub3/lv2_events_in>
+	atom:bufferType atom:Sequence ;
+	atom:supports <http://lv2plug.in/ns/ext/time#Position> ;
+	lv2:designation lv2:control ;
+	lv2:index 0 ;
+	lv2:portProperty lv2:connectionOptional ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<TalDub3/lv2_freewheel>
+	ingen:value 0.0 ;
+	lv2:designation lv2:freeWheeling ;
+	lv2:index 1 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#notOnGUI> ,
+		lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/lv2_port_14>
+	ingen:value 0.0 ;
+	lv2:index 19 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/resonance>
+	ingen:value 0.43200001 ;
+	lv2:index 14 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/unused>
+	ingen:value 0.0 ;
+	lv2:index 17 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<TalDub3/wet>
+	ingen:value 0.61142868 ;
+	lv2:index 16 ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<audio_in_1>
+	ingen:canvasX 45.0 ;
+	ingen:canvasY 84.0 ;
+	lv2:index 2 ;
+	lv2:name "Audio In 1" ;
+	lv2:symbol "audio_in_1" ;
+	a lv2:AudioPort ,
+		lv2:InputPort .
+
+<audio_in_2>
+	ingen:canvasX 45.0 ;
+	ingen:canvasY 131.0 ;
+	lv2:index 3 ;
+	lv2:name "Audio In 2" ;
+	lv2:symbol "audio_in_2" ;
+	a lv2:AudioPort ,
+		lv2:InputPort .
+
+<audio_in_3>
+	ingen:canvasX 42.0 ;
+	ingen:canvasY 196.0 ;
+	lv2:index 8 ;
+	lv2:name "Audio In 3" ;
+	lv2:symbol "audio_in_3" ;
+	a lv2:AudioPort ,
+		lv2:InputPort .
+
+<audio_in_4>
+	ingen:canvasX 43.0 ;
+	ingen:canvasY 243.0 ;
+	lv2:index 9 ;
+	lv2:name "Audio In 4" ;
+	lv2:symbol "audio_in_4" ;
+	a lv2:AudioPort ,
+		lv2:InputPort .
+
+<audio_out_1>
+	ingen:canvasX 936.0 ;
+	ingen:canvasY 108.0 ;
+	lv2:index 4 ;
+	lv2:name "Audio Out 1" ;
+	lv2:symbol "audio_out_1" ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<audio_out_2>
+	ingen:canvasX 935.0 ;
+	ingen:canvasY 169.0 ;
+	lv2:index 5 ;
+	lv2:name "Audio Out 2" ;
+	lv2:symbol "audio_out_2" ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<audio_out_3>
+	ingen:canvasX 928.0 ;
+	ingen:canvasY 230.0 ;
+	lv2:index 6 ;
+	lv2:name "Audio Out 3" ;
+	lv2:symbol "audio_out_3" ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<audio_out_4>
+	ingen:canvasX 938.0 ;
+	ingen:canvasY 297.0 ;
+	lv2:index 7 ;
+	lv2:name "Audio Out 4" ;
+	lv2:symbol "audio_out_4" ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<control>
+	ingen:canvasX 32.0 ;
+	ingen:canvasY 32.0 ;
+	atom:bufferType atom:Sequence ;
+	atom:supports patch:Message ;
+	<http://lv2plug.in/ns/ext/resize-port#minimumSize> 4096 ;
+	lv2:designation lv2:control ;
+	lv2:index 0 ;
+	lv2:name "Control" ;
+	lv2:portProperty lv2:connectionOptional ;
+	lv2:symbol "control" ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo>
+	ingen:canvasX 224.0 ;
+	ingen:canvasY 79.0 ;
+	<http://lv2plug.in/ns/ext/state#state> <impulse_reverb_stereo/state.ttl> ;
+	lv2:port <impulse_reverb_stereo/ca0> ,
+		<impulse_reverb_stereo/ca1> ,
+		<impulse_reverb_stereo/ca2> ,
+		<impulse_reverb_stereo/ca3> ,
+		<impulse_reverb_stereo/cam0> ,
+		<impulse_reverb_stereo/cam1> ,
+		<impulse_reverb_stereo/cam2> ,
+		<impulse_reverb_stereo/cam3> ,
+		<impulse_reverb_stereo/cim0> ,
+		<impulse_reverb_stereo/cim1> ,
+		<impulse_reverb_stereo/cim2> ,
+		<impulse_reverb_stereo/cim3> ,
+		<impulse_reverb_stereo/com0> ,
+		<impulse_reverb_stereo/com1> ,
+		<impulse_reverb_stereo/com2> ,
+		<impulse_reverb_stereo/com3> ,
+		<impulse_reverb_stereo/csf0> ,
+		<impulse_reverb_stereo/csf1> ,
+		<impulse_reverb_stereo/csf2> ,
+		<impulse_reverb_stereo/csf3> ,
+		<impulse_reverb_stereo/cst0> ,
+		<impulse_reverb_stereo/cst1> ,
+		<impulse_reverb_stereo/cst2> ,
+		<impulse_reverb_stereo/cst3> ,
+		<impulse_reverb_stereo/dry> ,
+		<impulse_reverb_stereo/enabled> ,
+		<impulse_reverb_stereo/eq_0> ,
+		<impulse_reverb_stereo/eq_1> ,
+		<impulse_reverb_stereo/eq_2> ,
+		<impulse_reverb_stereo/eq_3> ,
+		<impulse_reverb_stereo/eq_4> ,
+		<impulse_reverb_stereo/eq_5> ,
+		<impulse_reverb_stereo/eq_6> ,
+		<impulse_reverb_stereo/eq_7> ,
+		<impulse_reverb_stereo/fft> ,
+		<impulse_reverb_stereo/fsel> ,
+		<impulse_reverb_stereo/g_out> ,
+		<impulse_reverb_stereo/hcf> ,
+		<impulse_reverb_stereo/hcm> ,
+		<impulse_reverb_stereo/ifi0> ,
+		<impulse_reverb_stereo/ifi1> ,
+		<impulse_reverb_stereo/ifi2> ,
+		<impulse_reverb_stereo/ifi3> ,
+		<impulse_reverb_stereo/ifl0> ,
+		<impulse_reverb_stereo/ifl1> ,
+		<impulse_reverb_stereo/ifl2> ,
+		<impulse_reverb_stereo/ifl3> ,
+		<impulse_reverb_stereo/ifo0> ,
+		<impulse_reverb_stereo/ifo1> ,
+		<impulse_reverb_stereo/ifo2> ,
+		<impulse_reverb_stereo/ifo3> ,
+		<impulse_reverb_stereo/ifs0> ,
+		<impulse_reverb_stereo/ifs1> ,
+		<impulse_reverb_stereo/ifs2> ,
+		<impulse_reverb_stereo/ifs3> ,
+		<impulse_reverb_stereo/ihc0> ,
+		<impulse_reverb_stereo/ihc1> ,
+		<impulse_reverb_stereo/ihc2> ,
+		<impulse_reverb_stereo/ihc3> ,
+		<impulse_reverb_stereo/ils0> ,
+		<impulse_reverb_stereo/ils1> ,
+		<impulse_reverb_stereo/ils2> ,
+		<impulse_reverb_stereo/ils3> ,
+		<impulse_reverb_stereo/in_l> ,
+		<impulse_reverb_stereo/in_r> ,
+		<impulse_reverb_stereo/in_ui> ,
+		<impulse_reverb_stereo/irv0> ,
+		<impulse_reverb_stereo/irv1> ,
+		<impulse_reverb_stereo/irv2> ,
+		<impulse_reverb_stereo/irv3> ,
+		<impulse_reverb_stereo/itc0> ,
+		<impulse_reverb_stereo/itc1> ,
+		<impulse_reverb_stereo/itc2> ,
+		<impulse_reverb_stereo/itc3> ,
+		<impulse_reverb_stereo/lcf> ,
+		<impulse_reverb_stereo/lcm> ,
+		<impulse_reverb_stereo/mk0> ,
+		<impulse_reverb_stereo/mk1> ,
+		<impulse_reverb_stereo/mk2> ,
+		<impulse_reverb_stereo/mk3> ,
+		<impulse_reverb_stereo/out_l> ,
+		<impulse_reverb_stereo/out_latency> ,
+		<impulse_reverb_stereo/out_r> ,
+		<impulse_reverb_stereo/out_ui> ,
+		<impulse_reverb_stereo/pd> ,
+		<impulse_reverb_stereo/pd0> ,
+		<impulse_reverb_stereo/pd1> ,
+		<impulse_reverb_stereo/pd2> ,
+		<impulse_reverb_stereo/pd3> ,
+		<impulse_reverb_stereo/pl> ,
+		<impulse_reverb_stereo/pr> ,
+		<impulse_reverb_stereo/wet> ,
+		<impulse_reverb_stereo/wpp> ;
+	lv2:prototype <http://lsp-plug.in/plugins/lv2/impulse_reverb_stereo> ;
+	a ingen:Block .
+
+<impulse_reverb_stereo/ca0>
+	lv2:index 50 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ca1>
+	lv2:index 58 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ca2>
+	lv2:index 66 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ca3>
+	lv2:index 74 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/cam0>
+	ingen:value 0.0 ;
+	lv2:index 49 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cam1>
+	ingen:value 0.0 ;
+	lv2:index 57 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cam2>
+	ingen:value 0.0 ;
+	lv2:index 65 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cam3>
+	ingen:value 0.0 ;
+	lv2:index 73 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cim0>
+	ingen:value -100.0 ;
+	lv2:index 45 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cim1>
+	ingen:value -100.0 ;
+	lv2:index 53 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cim2>
+	ingen:value 100.0 ;
+	lv2:index 61 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cim3>
+	ingen:value 100.0 ;
+	lv2:index 69 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/com0>
+	ingen:value 0.0 ;
+	lv2:index 52 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/com1>
+	ingen:value 100.0 ;
+	lv2:index 60 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/com2>
+	ingen:value -100.0 ;
+	lv2:index 68 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/com3>
+	ingen:value 100.0 ;
+	lv2:index 76 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/csf0>
+	ingen:value 1.0 ;
+	lv2:index 46 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/csf1>
+	ingen:value 0.0 ;
+	lv2:index 54 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/csf2>
+	ingen:value 0.0 ;
+	lv2:index 62 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/csf3>
+	ingen:value 0.0 ;
+	lv2:index 70 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cst0>
+	ingen:value 0.0 ;
+	lv2:index 47 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cst1>
+	ingen:value 1.0 ;
+	lv2:index 55 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cst2>
+	ingen:value 2.0 ;
+	lv2:index 63 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/cst3>
+	ingen:value 3.0 ;
+	lv2:index 71 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/dry>
+	ingen:value 0.0 ;
+	lv2:index 10 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		<http://lv2plug.in/ns/ext/port-props#logarithmic> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/enabled>
+	ingen:value 1.0 ;
+	lv2:designation lv2:enabled ;
+	lv2:index 4 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/eq_0>
+	ingen:value 1.0 ;
+	lv2:index 80 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/eq_1>
+	ingen:value 1.0 ;
+	lv2:index 81 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/eq_2>
+	ingen:value 1.0 ;
+	lv2:index 82 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/eq_3>
+	ingen:value 1.0 ;
+	lv2:index 83 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/eq_4>
+	ingen:value 1.0 ;
+	lv2:index 84 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/eq_5>
+	ingen:value 1.0 ;
+	lv2:index 85 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/eq_6>
+	ingen:value 1.0 ;
+	lv2:index 86 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/eq_7>
+	ingen:value 1.0 ;
+	lv2:index 87 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/fft>
+	ingen:value 6.0 ;
+	lv2:index 6 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/fsel>
+	ingen:value 0.0 ;
+	lv2:index 5 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/g_out>
+	ingen:value 0.11220179 ;
+	lv2:index 12 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		<http://lv2plug.in/ns/ext/port-props#logarithmic> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/hcf>
+	ingen:value 10000.0 ;
+	lv2:index 89 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/hcm>
+	ingen:value 0.0 ;
+	lv2:index 88 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ifi0>
+	ingen:value 0.0 ;
+	lv2:index 15 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ifi1>
+	ingen:value 0.0 ;
+	lv2:index 23 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ifi2>
+	ingen:value 0.0 ;
+	lv2:index 31 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ifi3>
+	ingen:value 0.0 ;
+	lv2:index 39 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ifl0>
+	lv2:index 20 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ifl1>
+	lv2:index 28 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ifl2>
+	lv2:index 36 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ifl3>
+	lv2:index 44 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ifo0>
+	ingen:value 0.0 ;
+	lv2:index 16 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ifo1>
+	ingen:value 0.0 ;
+	lv2:index 24 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ifo2>
+	ingen:value 0.0 ;
+	lv2:index 32 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ifo3>
+	ingen:value 0.0 ;
+	lv2:index 40 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ifs0>
+	lv2:index 19 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ifs1>
+	lv2:index 27 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ifs2>
+	lv2:index 35 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ifs3>
+	lv2:index 43 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/ihc0>
+	ingen:value 0.0 ;
+	lv2:index 13 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ihc1>
+	ingen:value 0.0 ;
+	lv2:index 21 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ihc2>
+	ingen:value 0.0 ;
+	lv2:index 29 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ihc3>
+	ingen:value 0.0 ;
+	lv2:index 37 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ils0>
+	ingen:value 0.0 ;
+	lv2:index 17 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ils1>
+	ingen:value 0.0 ;
+	lv2:index 25 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ils2>
+	ingen:value 0.0 ;
+	lv2:index 33 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/ils3>
+	ingen:value 0.0 ;
+	lv2:index 41 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/in_l>
+	lv2:designation <http://lv2plug.in/ns/ext/port-groups#left> ;
+	lv2:index 0 ;
+	a lv2:AudioPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/in_r>
+	lv2:designation <http://lv2plug.in/ns/ext/port-groups#right> ;
+	lv2:index 1 ;
+	a lv2:AudioPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/in_ui>
+	atom:bufferType atom:Sequence ;
+	atom:supports atom:Sequence ,
+		patch:Message ,
+		<http://lv2plug.in/ns/ext/time#Position> ;
+	lv2:designation lv2:control ;
+	lv2:index 90 ;
+	a atom:AtomPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/irv0>
+	ingen:value 0.0 ;
+	lv2:index 18 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/irv1>
+	ingen:value 0.0 ;
+	lv2:index 26 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/irv2>
+	ingen:value 0.0 ;
+	lv2:index 34 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/irv3>
+	ingen:value 0.0 ;
+	lv2:index 42 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/itc0>
+	ingen:value 0.0 ;
+	lv2:index 14 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/itc1>
+	ingen:value 0.0 ;
+	lv2:index 22 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/itc2>
+	ingen:value 0.0 ;
+	lv2:index 30 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/itc3>
+	ingen:value 0.0 ;
+	lv2:index 38 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/lcf>
+	ingen:value 50.0 ;
+	lv2:index 79 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/lcm>
+	ingen:value 0.0 ;
+	lv2:index 78 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:enumeration ,
+		lv2:integer ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/mk0>
+	ingen:value 1.0 ;
+	lv2:index 48 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		<http://lv2plug.in/ns/ext/port-props#logarithmic> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/mk1>
+	ingen:value 1.0 ;
+	lv2:index 56 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		<http://lv2plug.in/ns/ext/port-props#logarithmic> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/mk2>
+	ingen:value 1.0 ;
+	lv2:index 64 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		<http://lv2plug.in/ns/ext/port-props#logarithmic> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/mk3>
+	ingen:value 1.0 ;
+	lv2:index 72 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		<http://lv2plug.in/ns/ext/port-props#logarithmic> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/out_l>
+	lv2:designation <http://lv2plug.in/ns/ext/port-groups#left> ;
+	lv2:index 2 ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/out_latency>
+	lv2:index 92 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		lv2:integer ,
+		lv2:reportsLatency ;
+	a lv2:ControlPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/out_r>
+	lv2:designation <http://lv2plug.in/ns/ext/port-groups#right> ;
+	lv2:index 3 ;
+	a lv2:AudioPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/out_ui>
+	atom:bufferType atom:Sequence ;
+	atom:supports atom:Sequence ,
+		patch:Message ,
+		<http://lv2plug.in/ns/ext/time#Position> ;
+	lv2:designation lv2:control ;
+	lv2:index 91 ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
+<impulse_reverb_stereo/pd>
+	ingen:value 0.0 ;
+	lv2:index 7 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/pd0>
+	ingen:value 0.0 ;
+	lv2:index 51 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/pd1>
+	ingen:value 0.0 ;
+	lv2:index 59 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/pd2>
+	ingen:value 0.0 ;
+	lv2:index 67 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/pd3>
+	ingen:value 0.0 ;
+	lv2:index 75 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/pl>
+	ingen:value -100.0 ;
+	lv2:index 8 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/pr>
+	ingen:value 100.0 ;
+	lv2:index 9 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/wet>
+	ingen:value 0.99999911 ;
+	lv2:index 11 ;
+	lv2:portProperty <http://lv2plug.in/ns/ext/port-props#hasStrictBounds> ,
+		<http://lv2plug.in/ns/ext/port-props#logarithmic> ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<impulse_reverb_stereo/wpp>
+	ingen:value 0.0 ;
+	lv2:index 77 ;
+	lv2:portProperty lv2:toggled ;
+	a lv2:ControlPort ,
+		lv2:InputPort .
+
+<>
+	ingen:arc [
+		ingen:head <TalDub3/lv2_audio_in_1> ;
+		ingen:tail <audio_in_3>
+	] , [
+		ingen:head <TalDub3/lv2_audio_in_2> ;
+		ingen:tail <audio_in_4>
+	] , [
+		ingen:head <audio_out_1> ;
+		ingen:tail <impulse_reverb_stereo/out_l>
+	] , [
+		ingen:head <audio_out_3> ;
+		ingen:tail <TalDub3/lv2_audio_out_1>
+	] , [
+		ingen:head <impulse_reverb_stereo/in_r> ;
+		ingen:tail <audio_in_2>
+	] , [
+		ingen:head <impulse_reverb_stereo/in_l> ;
+		ingen:tail <audio_in_1>
+	] , [
+		ingen:head <audio_out_2> ;
+		ingen:tail <impulse_reverb_stereo/out_r>
+	] , [
+		ingen:head <audio_out_4> ;
+		ingen:tail <TalDub3/lv2_audio_out_2>
+	] ;
+	ingen:block <TalDub3> ,
+		<impulse_reverb_stereo> ;
+	ingen:polyphony 1 ;
+	<http://lv2plug.in/ns/extensions/ui#ui> ingen:GraphUIGtk2 ;
+	lv2:extensionData <http://lv2plug.in/ns/ext/state#interface> ;
+	lv2:port <audio_in_1> ,
+		<audio_in_2> ,
+		<audio_in_3> ,
+		<audio_in_4> ,
+		<audio_out_1> ,
+		<audio_out_2> ,
+		<audio_out_3> ,
+		<audio_out_4> ,
+		<control> ,
+		<notify> ;
+	doap:name "dub" ;
+	a ingen:Graph ,
+		lv2:Plugin .
+
+<notify>
+	ingen:canvasX 976.0 ;
+	ingen:canvasY 19.0 ;
+	atom:bufferType atom:Sequence ;
+	atom:supports patch:Message ;
+	<http://lv2plug.in/ns/ext/resize-port#minimumSize> 4096 ;
+	lv2:designation lv2:control ;
+	lv2:index 1 ;
+	lv2:name "Notify" ;
+	lv2:portProperty lv2:connectionOptional ;
+	lv2:symbol "notify" ;
+	a atom:AtomPort ,
+		lv2:OutputPort .
+
